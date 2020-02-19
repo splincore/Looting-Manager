@@ -45,7 +45,7 @@ namespace LootingManager
 
         public override string SettingsCategory()
         {
-            return "No Weapon Looting";
+            return "Looting Manager";
         }
     }
 }
