@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Manifest>
+
+	<identifier>No Weapon Looting</identifier>
+	<version>1.0.0.3</version>
+	<incompatibleWith>
+		<li/>
+	</incompatibleWith>
+	<loadAfter>
+		<li/>
+	</loadAfter>
+
+</Manifest>
