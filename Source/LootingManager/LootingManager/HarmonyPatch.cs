@@ -1,5 +1,5 @@
 ﻿using Verse;
-using Harmony;
+using HarmonyLib;
 using RimWorld;
 using System;
 
@@ -10,7 +10,7 @@ namespace LootingManager
     {
         static HarmonyPatch()
         {
-            var harmony = HarmonyInstance.Create("rimworld.carnysenpai.lootingmanager");
+            var harmony = new Harmony("rimworld.carnysenpai.lootingmanager");
             harmony.Patch(AccessTools.Method(typeof(Pawn), "Kill"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Kill_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(int), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
