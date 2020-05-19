@@ -28,7 +28,7 @@ namespace LootingManager
                 __instance.inventory.DropAllNearPawn(__instance.PositionHeld);
                 __instance.apparel.DropAll(__instance.PositionHeld);
                 __instance.equipment.DropAllEquipment(__instance.PositionHeld);
-                __instance.Corpse.Destroy(DestroyMode.Vanish);
+                if (!__instance.Corpse.Destroyed) __instance.Corpse.Destroy(DestroyMode.Vanish);
             }
         }
 
@@ -65,7 +65,7 @@ namespace LootingManager
                     GenSpawn.Spawn(thingWithComps, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                 }
             }
-            thing.Destroy(DestroyMode.Vanish);
+            if (!thing.Destroyed) thing.Destroy(DestroyMode.Vanish);
         }
     }
 }
