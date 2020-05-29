@@ -13,7 +13,7 @@ namespace LootingManager
             var harmony = new Harmony("rimworld.carnysenpai.lootingmanager");
             harmony.Patch(AccessTools.Method(typeof(Pawn), "Kill"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Kill_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(int), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
-            harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
+            harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop_NewTmp"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
         }
 
         [HarmonyPostfix]
@@ -52,7 +52,31 @@ namespace LootingManager
             if (thing.def.IsApparel && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteApparel) return;
             if (!thing.def.IsWeapon && !thing.def.IsApparel && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteEverythingElse) return;
 
-            if (LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteOnlyUnresearched && thing.def.IsResearchFinished && (thing.def.recipeMaker == null || thing.def.recipeMaker.researchPrerequisite == null || thing.def.recipeMaker.researchPrerequisite.IsFinished)) return;
+            bool researchFinished = true;
+            if (thing.def.researchPrerequisites != null)
+            {
+                researchFinished = thing.def.IsResearchFinished;
+            }
+            else if (thing.def.recipeMaker == null)
+            {
+                researchFinished = true;
+            }
+            else if (thing.def.recipeMaker.researchPrerequisite == null && thing.def.recipeMaker.researchPrerequisites == null)
+            {
+                researchFinished = true;
+            }
+            else
+            {
+                if (thing.def.recipeMaker.researchPrerequisites == null)
+                {
+                    researchFinished = thing.def.recipeMaker.researchPrerequisite.IsFinished;
+                }
+                else
+                {
+                    researchFinished = !thing.def.recipeMaker.researchPrerequisites.Any(r => !r.IsFinished);
+                }
+            }            
+            if (LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteOnlyUnresearched && researchFinished) return;
 
             if (!Rand.Chance(LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteChance)) return;
 
