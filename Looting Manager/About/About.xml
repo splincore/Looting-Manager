@@ -6,6 +6,7 @@
 	<description>Decide yourself what items your enemies will drop and what disappears. Fully customizable loot options. Helps with cleaning up big raids. Can make weapons, apparel, other stuff and even corpses disappear or disassemble.</description>
 	<supportedVersions>
 		<li>1.1</li>
+		<li>1.2</li>
 	</supportedVersions>
 	<modDependencies>
 		<li>
