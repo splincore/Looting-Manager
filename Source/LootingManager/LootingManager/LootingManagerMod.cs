@@ -30,6 +30,7 @@ namespace LootingManager
             listingStandard.CheckboxLabeled("Delete only unresearched things", ref lootingManagerModSettings.deleteOnlyUnresearched, "Only things that the player has not researched will be affected by this mod");
             listingStandard.CheckboxLabeled("Delete weapons", ref lootingManagerModSettings.deleteWeapons, "Weapons will get deleted if dropped");
             listingStandard.CheckboxLabeled("Delete apparel", ref lootingManagerModSettings.deleteApparel, "Apparel will get deleted if dropped");
+            listingStandard.CheckboxLabeled("Eject ammunition currently loaded in destroyed things", ref lootingManagerModSettings.ejectAmmo, "If enabled, ammunition will get dropped out of weapons, otherwise it will get destroyed (or refunded) together with the weapon");
             listingStandard.CheckboxLabeled("Delete everything else", ref lootingManagerModSettings.deleteEverythingElse, "Everything that is not a weapon or apparel will get deleted if dropped");
             listingStandard.CheckboxLabeled("Disassemble items instead of deleting", ref lootingManagerModSettings.refundItems, "Deleted items will spawn their crafting ingrediens (if they have any)");
 
