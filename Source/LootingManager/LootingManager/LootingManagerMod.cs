@@ -17,25 +17,26 @@ namespace LootingManager
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
 
-            listingStandard.Label("Delete chance");
+            listingStandard.Label("lootingManagerDeleteChanceLabel".Translate(), -1f, "lootingManagerDeleteChanceDescription".Translate());
             listingStandard.Gap(listingStandard.verticalSpacing);
             Rect rect1 = listingStandard.GetRect(22f);
             lootingManagerModSettings.deleteChance = Widgets.HorizontalSlider(rect1, lootingManagerModSettings.deleteChance, 0f, 1f, false, (lootingManagerModSettings.deleteChance * 100f).ToString("0") + "%", "0%", "100%", -1f);
             listingStandard.Gap(listingStandard.verticalSpacing);
 
-            listingStandard.CheckboxLabeled("Delete from hostile pawns", ref lootingManagerModSettings.deleteHostile, "Everything this mod offers will get used on hostile pawns");
-            listingStandard.CheckboxLabeled("Delete from friendly pawns", ref lootingManagerModSettings.deleteFriendly, "Everything this mod offers will get used on friendly pawns (NOT player faction)");
-            listingStandard.CheckboxLabeled("Exclude your prisoners", ref lootingManagerModSettings.excludePrisoners, "Pawns you take as prisoners will NOT be affected by this mod");
-            listingStandard.CheckboxLabeled("Delete humanlike corpses (and drop all items)", ref lootingManagerModSettings.deleteCorpses, "If a pawn dies, it will drop everything and then the naked corpse will disappear");
-            listingStandard.CheckboxLabeled("Delete only unresearched things", ref lootingManagerModSettings.deleteOnlyUnresearched, "Only things that the player has not researched will be affected by this mod");
-            listingStandard.CheckboxLabeled("Delete weapons", ref lootingManagerModSettings.deleteWeapons, "Weapons will get deleted if dropped");
-            listingStandard.CheckboxLabeled("Delete apparel", ref lootingManagerModSettings.deleteApparel, "Apparel will get deleted if dropped");
-            listingStandard.CheckboxLabeled("Eject ammunition currently loaded in destroyed things", ref lootingManagerModSettings.ejectAmmo, "If enabled, ammunition will get dropped out of weapons, otherwise it will get destroyed (or refunded) together with the weapon");
-            listingStandard.CheckboxLabeled("Delete everything else", ref lootingManagerModSettings.deleteEverythingElse, "Everything that is not a weapon or apparel will get deleted if dropped");
-            listingStandard.CheckboxLabeled("Disassemble items instead of deleting", ref lootingManagerModSettings.refundItems, "Deleted items will spawn their crafting ingrediens (if they have any)");
+            listingStandard.CheckboxLabeled("lootingManagerDeleteHostileLabel".Translate(), ref lootingManagerModSettings.deleteHostile, "lootingManagerDeleteHostileDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteFriendlyLabel".Translate(), ref lootingManagerModSettings.deleteFriendly, "lootingManagerDeleteFriendlyDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerExcludePrisonersLabel".Translate(), ref lootingManagerModSettings.excludePrisoners, "lootingManagerExcludePrisonersDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteCorpsesLabel".Translate(), ref lootingManagerModSettings.deleteCorpses, "lootingManagerDeleteCorpsesDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteOnlyUnresearchedLabel".Translate(), ref lootingManagerModSettings.deleteOnlyUnresearched, "lootingManagerDeleteOnlyUnresearchedDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteWeaponsLabel".Translate(), ref lootingManagerModSettings.deleteWeapons, "lootingManagerDeleteWeaponsDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteApparelLabel".Translate(), ref lootingManagerModSettings.deleteApparel, "lootingManagerDeleteApparelDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerEjectAmmoLabel".Translate(), ref lootingManagerModSettings.ejectAmmo, "lootingManagerEjectAmmoDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteEverythingElseLabel".Translate(), ref lootingManagerModSettings.deleteEverythingElse, "lootingManagerDeleteEverythingElseDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteOnlyFromCorpsesLabel".Translate(), ref lootingManagerModSettings.deleteOnlyFromCorpses, "lootingManagerDeleteOnlyFromCorpsesDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerRefundItemsLabel".Translate(), ref lootingManagerModSettings.refundItems, "lootingManagerRefundItemsDescription".Translate());
 
             listingStandard.Gap(listingStandard.verticalSpacing);
-            listingStandard.Label("Disassemble efficiency (not used in vanilla Rimworld)", -1f, "Vanilla Rimworld does not use efficiency when disassembling items, but it may be used in some mods");
+            listingStandard.Label("lootingManagerRefundEfficiencyLabel".Translate(), -1f, "lootingManagerRefundEfficiencyDescription".Translate());
             listingStandard.Gap(listingStandard.verticalSpacing);
             Rect rect2 = listingStandard.GetRect(22f);
             lootingManagerModSettings.refundEfficiency = Widgets.HorizontalSlider(rect2, lootingManagerModSettings.refundEfficiency, 0f, 1f, false, (lootingManagerModSettings.refundEfficiency*100f).ToString("0") + "%", "0%", "100%", -1f);

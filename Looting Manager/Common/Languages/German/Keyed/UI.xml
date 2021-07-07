@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Mod Options -->
+	
+	<lootingManagerDeleteChanceLabel>Zerstören Chance</lootingManagerDeleteChanceLabel>
+	<lootingManagerDeleteChanceDescription>Gegenstände werden mit einer Chance zerstört (Standard = 100%)</lootingManagerDeleteChanceDescription>
+	
+	<lootingManagerDeleteHostileLabel>Zerstöre Gegenstände von feindlichen Personen</lootingManagerDeleteHostileLabel>
+	<lootingManagerDeleteHostileDescription>Alles aus diesem Mod wird auf feindliche Personen angewendet (Standard = aktiviert)</lootingManagerDeleteHostileDescription>
+	
+	<lootingManagerDeleteFriendlyLabel>Zerstöre Gegenstände von freundlichen Personen</lootingManagerDeleteFriendlyLabel>
+	<lootingManagerDeleteFriendlyDescription>Alles aus diesem Mod wird auf freundliche Personen angewendet (NICHT auf Spieler Kolonisten) (Standard = deaktiviert)</lootingManagerDeleteFriendlyDescription>
+	
+	<lootingManagerExcludePrisonersLabel>Ignoriere deine Gefangenen</lootingManagerExcludePrisonersLabel>
+	<lootingManagerExcludePrisonersDescription>Deine Gefangenen werden von dem Mod ignoriert, da sie ansonsten als feindliche Personen zählen (Standard = aktiviert)</lootingManagerExcludePrisonersDescription>
+	
+	<lootingManagerDeleteCorpsesLabel>Zerstöre alle menschlichen Leichen (und lasse alle Gegenstände fallen)</lootingManagerDeleteCorpsesLabel>
+	<lootingManagerDeleteCorpsesDescription>Wenn eine Person stirbt, wird sie alle Gegenstände fallen lassen und dann wird die Leiche zerstört (Standard = deaktiviert)</lootingManagerDeleteCorpsesDescription>
+	
+	<lootingManagerDeleteOnlyUnresearchedLabel>Zerstöre nur unerforschtes</lootingManagerDeleteOnlyUnresearchedLabel>
+	<lootingManagerDeleteOnlyUnresearchedDescription>Nur Gegenstände, die der Spieler nicht erforscht hat, werden von dem Mod zerstört (Standard = deaktiviert)</lootingManagerDeleteOnlyUnresearchedDescription>
+	
+	<lootingManagerDeleteWeaponsLabel>Zerstöre Waffen</lootingManagerDeleteWeaponsLabel>
+	<lootingManagerDeleteWeaponsDescription>Waffen werden zerstört wenn sie fallen gelassen werden (Standard = aktiviert)</lootingManagerDeleteWeaponsDescription>
+	
+	<lootingManagerDeleteApparelLabel>Zerstöre Kleidung</lootingManagerDeleteApparelLabel>
+	<lootingManagerDeleteApparelDescription>Kleidung wird zerstört wenn sie fallen gelassen wird (Standard = deaktiviert)</lootingManagerDeleteApparelDescription>
+	
+	<lootingManagerEjectAmmoLabel>Werfe Munition aus, die aktuell in zerstörten Gegenständen geladen ist</lootingManagerEjectAmmoLabel>
+	<lootingManagerEjectAmmoDescription>Falls aktiviert, wird Munition aus Waffen ausgeworfen, anstatt zusammen mit der Waffe zerstört (Standard = aktiviert)</lootingManagerEjectAmmoDescription>
+	
+	<lootingManagerDeleteEverythingElseLabel>Zerstöre alles andere</lootingManagerDeleteEverythingElseLabel>
+	<lootingManagerDeleteEverythingElseDescription>Alles was keine Waffe oder Kleidung ist, wird zerstört, wenn es fallen gelassen wird (Standard = deaktiviert)</lootingManagerDeleteEverythingElseDescription>
+	
+	<lootingManagerDeleteOnlyFromCorpsesLabel>Zerstöre nur von toten Personen</lootingManagerDeleteOnlyFromCorpsesLabel>
+	<lootingManagerDeleteOnlyFromCorpsesDescription>Alles was von bewegungsunfähigen Personen fallen gelassen wird, wird nicht zerstört (Standard = deaktiviert)</lootingManagerDeleteOnlyFromCorpsesDescription>
+	
+	<lootingManagerRefundItemsLabel>Zerlege Gegenstände anstatt sie zu zerstören</lootingManagerRefundItemsLabel>
+	<lootingManagerRefundItemsDescription>Zerstörte Gegenstände erzeugen ihre Herstellungsmaterialien, falls sie welche haben (Standard = deaktiviert)</lootingManagerRefundItemsDescription>
+	
+	<lootingManagerRefundEfficiencyLabel>Zerlegungseffizienz (wird nicht in Vanilla Rimworld genutzt)</lootingManagerRefundEfficiencyLabel>
+	<lootingManagerRefundEfficiencyDescription>Vanilla Rimworld nutzt keine Effizienz wenn Gegenstände zerlegt werden, aber es wird eventuell in manchen Mods genutzt (Standard = 50%)</lootingManagerRefundEfficiencyDescription>
+
+</LanguageData>

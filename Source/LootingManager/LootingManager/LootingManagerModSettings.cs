@@ -14,6 +14,7 @@ namespace LootingManager
         public bool deleteApparel = false;
         public bool ejectAmmo = true;
         public bool deleteEverythingElse = false;
+        public bool deleteOnlyFromCorpses = false;
         public bool refundItems = false;
         public float refundEfficiency = 0.5f;
 
@@ -30,6 +31,7 @@ namespace LootingManager
             Scribe_Values.Look<bool>(ref deleteApparel, "deleteApparel", false, false);
             Scribe_Values.Look<bool>(ref ejectAmmo, "ejectAmmo", true, false);
             Scribe_Values.Look<bool>(ref deleteEverythingElse, "deleteEverythingElse", false, false);
+            Scribe_Values.Look<bool>(ref deleteOnlyFromCorpses, "deleteOnlyFromCorpses", false, false);
             Scribe_Values.Look<bool>(ref refundItems, "RefundItems", false, false);
             Scribe_Values.Look<float>(ref refundEfficiency, "RefundEfficiency", 0.5f, false);
         }

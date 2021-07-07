@@ -13,7 +13,7 @@ namespace LootingManager
             var harmony = new Harmony("rimworld.carnysenpai.lootingmanager");
             harmony.Patch(AccessTools.Method(typeof(Pawn), "Kill"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("Kill_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(int), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
-            harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop_NewTmp"), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
+            harmony.Patch(AccessTools.Method(typeof(ThingOwner), "TryDrop", new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(ThingPlaceMode), typeof(Thing).MakeByRefType(), typeof(Action<Thing, int>), typeof(Predicate<IntVec3>), typeof(bool) }), null, new HarmonyMethod(typeof(HarmonyPatch).GetMethod("TryDrop_PostFix")), null);
         }
 
         [HarmonyPostfix]
@@ -49,6 +49,7 @@ namespace LootingManager
             if (thing.def.IsWeapon && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteWeapons) return;
             if (thing.def.IsApparel && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteApparel) return;
             if (!thing.def.IsWeapon && !thing.def.IsApparel && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteEverythingElse) return;
+            if (!holdingPawn.Dead && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteOnlyFromCorpses) return;
 
             bool researchFinished = true;
             if (thing.def.researchPrerequisites != null)

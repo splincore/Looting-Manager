@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Mod Options -->
+	
+	<lootingManagerDeleteChanceLabel>Delete chance</lootingManagerDeleteChanceLabel>
+	<lootingManagerDeleteChanceDescription>Things will get deleted with a chance (Default = 100%)</lootingManagerDeleteChanceDescription>
+	
+	<lootingManagerDeleteHostileLabel>Delete from hostile pawns</lootingManagerDeleteHostileLabel>
+	<lootingManagerDeleteHostileDescription>Everything this mod offers will get used on hostile pawns (Default = activated)</lootingManagerDeleteHostileDescription>
+	
+	<lootingManagerDeleteFriendlyLabel>Delete from friendly pawns</lootingManagerDeleteFriendlyLabel>
+	<lootingManagerDeleteFriendlyDescription>Everything this mod offers will get used on friendly pawns (NOT player faction) (Default = deactivated)</lootingManagerDeleteFriendlyDescription>
+	
+	<lootingManagerExcludePrisonersLabel>Exclude your prisoners</lootingManagerExcludePrisonersLabel>
+	<lootingManagerExcludePrisonersDescription>Pawns you take as prisoners will NOT be affected by this mod, which would normally count as hostile pawns (Default = activated)</lootingManagerExcludePrisonersDescription>
+	
+	<lootingManagerDeleteCorpsesLabel>Delete humanlike corpses (and drop all items)</lootingManagerDeleteCorpsesLabel>
+	<lootingManagerDeleteCorpsesDescription>If a pawn dies, it will drop everything and then the naked corpse will disappear (Default = deactivated)</lootingManagerDeleteCorpsesDescription>
+	
+	<lootingManagerDeleteOnlyUnresearchedLabel>Delete only unresearched things</lootingManagerDeleteOnlyUnresearchedLabel>
+	<lootingManagerDeleteOnlyUnresearchedDescription>Only things that the player has not researched will be affected by this mod (Default = deactivated)</lootingManagerDeleteOnlyUnresearchedDescription>
+	
+	<lootingManagerDeleteWeaponsLabel>Delete weapons</lootingManagerDeleteWeaponsLabel>
+	<lootingManagerDeleteWeaponsDescription>Weapons will get deleted if dropped (Default = activated)</lootingManagerDeleteWeaponsDescription>
+	
+	<lootingManagerDeleteApparelLabel>Delete apparel</lootingManagerDeleteApparelLabel>
+	<lootingManagerDeleteApparelDescription>Apparel will get deleted if dropped (Default = deactivated)</lootingManagerDeleteApparelDescription>
+	
+	<lootingManagerEjectAmmoLabel>Eject ammunition currently loaded in destroyed things</lootingManagerEjectAmmoLabel>
+	<lootingManagerEjectAmmoDescription>If enabled, ammunition will get dropped out of weapons, instead of getting destroyed together with the weapon (Default = activated)</lootingManagerEjectAmmoDescription>
+	
+	<lootingManagerDeleteEverythingElseLabel>Delete everything else</lootingManagerDeleteEverythingElseLabel>
+	<lootingManagerDeleteEverythingElseDescription>Everything that is not a weapon or apparel will get deleted if dropped (Default = deactivated)</lootingManagerDeleteEverythingElseDescription>
+	
+	<lootingManagerDeleteOnlyFromCorpsesLabel>Delete only from dead pawns</lootingManagerDeleteOnlyFromCorpsesLabel>
+	<lootingManagerDeleteOnlyFromCorpsesDescription>Everything that is stripped from downed pawns will not get deleted (Default = deactivated)</lootingManagerDeleteOnlyFromCorpsesDescription>
+	
+	<lootingManagerRefundItemsLabel>Disassemble items instead of deleting</lootingManagerRefundItemsLabel>
+	<lootingManagerRefundItemsDescription>Deleted items will spawn their crafting ingrediens, if they have any (Default = deactivated)</lootingManagerRefundItemsDescription>
+	
+	<lootingManagerRefundEfficiencyLabel>Disassemble efficiency (not used in vanilla Rimworld)</lootingManagerRefundEfficiencyLabel>
+	<lootingManagerRefundEfficiencyDescription>Vanilla Rimworld does not use efficiency when disassembling items, but it may be used in some mods (Default = 50%)</lootingManagerRefundEfficiencyDescription>
+
+</LanguageData>
