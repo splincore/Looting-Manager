@@ -9,6 +9,9 @@
 	<lootingManagerDeleteHostileLabel>Delete from hostile pawns</lootingManagerDeleteHostileLabel>
 	<lootingManagerDeleteHostileDescription>Everything this mod offers will get used on hostile pawns (Default = activated)</lootingManagerDeleteHostileDescription>
 	
+	<lootingManagerDeleteAnimalsLabel>Delete from animals</lootingManagerDeleteAnimalsLabel>
+	<lootingManagerDeleteAnimalsDescription>Everything this mod offers will get used on caravan and other animals, that can carry items (Default = activated)</lootingManagerDeleteAnimalsDescription>
+	
 	<lootingManagerDeleteFriendlyLabel>Delete from friendly pawns</lootingManagerDeleteFriendlyLabel>
 	<lootingManagerDeleteFriendlyDescription>Everything this mod offers will get used on friendly pawns (NOT player faction) (Default = deactivated)</lootingManagerDeleteFriendlyDescription>
 	

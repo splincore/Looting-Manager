@@ -7,6 +7,7 @@ namespace LootingManager
         public float deleteChance = 1f;
         public bool deleteHostile = true;
         public bool deleteFriendly = false;
+        public bool deleteAnimals = true;
         public bool excludePrisoners = true;
         public bool deleteCorpses = false;
         public bool deleteOnlyUnresearched = false;
@@ -24,6 +25,7 @@ namespace LootingManager
             Scribe_Values.Look<float>(ref deleteChance, "DeleteChance", 1f, false);
             Scribe_Values.Look<bool>(ref deleteHostile, "DeleteHostile", true, false);
             Scribe_Values.Look<bool>(ref deleteFriendly, "DeleteFriendly", false, false);
+            Scribe_Values.Look<bool>(ref deleteAnimals, "DeleteAnimals", true, false);
             Scribe_Values.Look<bool>(ref excludePrisoners, "ExcludePrisoners", true, false);
             Scribe_Values.Look<bool>(ref deleteCorpses, "DeleteCorpses", false, false);
             Scribe_Values.Look<bool>(ref deleteOnlyUnresearched, "DeleteOnlyUnresearched", false, false);

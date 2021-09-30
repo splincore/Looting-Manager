@@ -22,6 +22,7 @@ namespace LootingManager
             if (__instance.Dead && __instance.RaceProps.Humanlike && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteCorpses)
             {
                 if (__instance.Faction == Faction.OfPlayer) return;
+                if (__instance.RaceProps.Animal && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteAnimals) return;
                 if (__instance.IsPrisonerOfColony && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().excludePrisoners) return;
                 if (__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteHostile) return;
                 if (!__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteFriendly) return;
@@ -44,6 +45,7 @@ namespace LootingManager
             if (holdingPawn.Faction == Faction.OfPlayer) return;
             if (holdingPawn.IsPrisonerOfColony && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().excludePrisoners) return;
             if (holdingPawn.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteHostile) return;
+            if (holdingPawn.RaceProps.Animal && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteAnimals) return;
             if (!holdingPawn.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteFriendly) return;
 
             if (thing.def.IsWeapon && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteWeapons) return;

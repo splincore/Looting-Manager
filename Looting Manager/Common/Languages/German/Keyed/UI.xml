@@ -9,6 +9,9 @@
 	<lootingManagerDeleteHostileLabel>Zerstöre Gegenstände von feindlichen Personen</lootingManagerDeleteHostileLabel>
 	<lootingManagerDeleteHostileDescription>Alles aus diesem Mod wird auf feindliche Personen angewendet (Standard = aktiviert)</lootingManagerDeleteHostileDescription>
 	
+	<lootingManagerDeleteAnimalsLabel>Zerstöre Gegenstände von Tieren</lootingManagerDeleteAnimalsLabel>
+	<lootingManagerDeleteAnimalsDescription>Alles aus diesem Mod wird auf Tiere angewendet, die Gegenstände tragen können (Standard = aktiviert)</lootingManagerDeleteAnimalsDescription>
+	
 	<lootingManagerDeleteFriendlyLabel>Zerstöre Gegenstände von freundlichen Personen</lootingManagerDeleteFriendlyLabel>
 	<lootingManagerDeleteFriendlyDescription>Alles aus diesem Mod wird auf freundliche Personen angewendet (NICHT auf Spieler Kolonisten) (Standard = deaktiviert)</lootingManagerDeleteFriendlyDescription>
 	

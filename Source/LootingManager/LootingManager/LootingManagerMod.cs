@@ -25,6 +25,7 @@ namespace LootingManager
 
             listingStandard.CheckboxLabeled("lootingManagerDeleteHostileLabel".Translate(), ref lootingManagerModSettings.deleteHostile, "lootingManagerDeleteHostileDescription".Translate());
             listingStandard.CheckboxLabeled("lootingManagerDeleteFriendlyLabel".Translate(), ref lootingManagerModSettings.deleteFriendly, "lootingManagerDeleteFriendlyDescription".Translate());
+            listingStandard.CheckboxLabeled("lootingManagerDeleteAnimalsLabel".Translate(), ref lootingManagerModSettings.deleteAnimals, "lootingManagerDeleteAnimalsDescription".Translate());
             listingStandard.CheckboxLabeled("lootingManagerExcludePrisonersLabel".Translate(), ref lootingManagerModSettings.excludePrisoners, "lootingManagerExcludePrisonersDescription".Translate());
             listingStandard.CheckboxLabeled("lootingManagerDeleteCorpsesLabel".Translate(), ref lootingManagerModSettings.deleteCorpses, "lootingManagerDeleteCorpsesDescription".Translate());
             listingStandard.CheckboxLabeled("lootingManagerDeleteOnlyUnresearchedLabel".Translate(), ref lootingManagerModSettings.deleteOnlyUnresearched, "lootingManagerDeleteOnlyUnresearchedDescription".Translate());
