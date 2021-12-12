@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Mod Options -->
+	
+	<lootingManagerDeleteChanceLabel>Шанс удалить</lootingManagerDeleteChanceLabel>
+	<lootingManagerDeleteChanceDescription>Вещи будут удаляться с вероятностью (По умолчанию = 100%)</lootingManagerDeleteChanceDescription>
+	
+	<lootingManagerDeleteHostileLabel>Удалять с враждебных пешек</lootingManagerDeleteHostileLabel>
+	<lootingManagerDeleteHostileDescription>Все, что предлагает этот мод, будет использоваться на враждебных пешках (По умолчанию = активировано).</lootingManagerDeleteHostileDescription>
+	
+	<lootingManagerDeleteAnimalsLabel>Удалять с животных</lootingManagerDeleteAnimalsLabel>
+	<lootingManagerDeleteAnimalsDescription>Все, что предлагает этот мод, будет использоваться на караванах и других животных, которые могут переносить предметы (По умолчанию = активировано).</lootingManagerDeleteAnimalsDescription>
+	
+	<lootingManagerDeleteFriendlyLabel>Удалять с дружеских пешек</lootingManagerDeleteFriendlyLabel>
+	<lootingManagerDeleteFriendlyDescription>Все, что предлагает этот мод, будет использоваться на дружественных пешках (НЕ фракция игрока) (По умолчанию = деактивировано)</lootingManagerDeleteFriendlyDescription>
+	
+	<lootingManagerExcludePrisonersLabel>Исключая ваших заключенных</lootingManagerExcludePrisonersLabel>
+	<lootingManagerExcludePrisonersDescription>Пешки, которых вы берете в плен, которые обычно считаются враждебными пешками, НЕ будут затронуты этим модом, (по умолчанию = активировано)</lootingManagerExcludePrisonersDescription>
+	
+	<lootingManagerDeleteCorpsesLabel>Удалять человекоподобные трупы (и сбрасывать все предметы)</lootingManagerDeleteCorpsesLabel>
+	<lootingManagerDeleteCorpsesDescription>Если пешка умрет, она сбросит все, а затем голый труп исчезнет (По умолчанию = деактивировано).</lootingManagerDeleteCorpsesDescription>
+	
+	<lootingManagerDeleteOnlyUnresearchedLabel>Удалять только неисследованные вещи</lootingManagerDeleteOnlyUnresearchedLabel>
+	<lootingManagerDeleteOnlyUnresearchedDescription>Этот мод повлияет только на то, что игрок еще не исследовал (по умолчанию = деактивировано).</lootingManagerDeleteOnlyUnresearchedDescription>
+	
+	<lootingManagerDeleteWeaponsLabel>Удалять оружие</lootingManagerDeleteWeaponsLabel>
+	<lootingManagerDeleteWeaponsDescription>Оружие будет удалено при выпадении (по умолчанию = активировано)</lootingManagerDeleteWeaponsDescription>
+	
+	<lootingManagerDeleteApparelLabel>Удалять одежду</lootingManagerDeleteApparelLabel>
+	<lootingManagerDeleteApparelDescription>Одежда будет удалена при выпадении (по умолчанию = деактивировано)</lootingManagerDeleteApparelDescription>
+	
+	<lootingManagerEjectAmmoLabel>Извлекать боеприпасы, заряженные в уничтожаемые вещи</lootingManagerEjectAmmoLabel>
+	<lootingManagerEjectAmmoDescription>Если включено, боеприпасы будут извлекаться из оружия, а не уничтожаться вместе с ним (По умолчанию = включено).</lootingManagerEjectAmmoDescription>
+	
+	<lootingManagerDeleteEverythingElseLabel>Удалять все остальное</lootingManagerDeleteEverythingElseLabel>
+	<lootingManagerDeleteEverythingElseDescription>Все, что не является оружием или одеждой, будет удалено при выпадении (по умолчанию = деактивировано).</lootingManagerDeleteEverythingElseDescription>
+	
+	<lootingManagerDeleteOnlyFromCorpsesLabel>Удалять только с мертвых пешек</lootingManagerDeleteOnlyFromCorpsesLabel>
+	<lootingManagerDeleteOnlyFromCorpsesDescription>Все, что снимается со сбитых пешек, не будет удалено (По умолчанию = деактивировано).</lootingManagerDeleteOnlyFromCorpsesDescription>
+	
+	<lootingManagerRefundItemsLabel>Разбирать предметы вместо удаления</lootingManagerRefundItemsLabel>
+	<lootingManagerRefundItemsDescription>Удаленные предметы будут разобраны в свои ингредиенты для изготовления, если они у них есть (по умолчанию = деактивированы).</lootingManagerRefundItemsDescription>
+	
+	<lootingManagerRefundEfficiencyLabel>Эффективность разборки (не используется в ванильном Rimworld)</lootingManagerRefundEfficiencyLabel>
+	<lootingManagerRefundEfficiencyDescription>В ванильном Rimworld нет эффективности разборки предметов, но она есть в некоторых модах (по умолчанию = 50%)</lootingManagerRefundEfficiencyDescription>
+
+</LanguageData>
