@@ -19,15 +19,16 @@ namespace LootingManager
         [HarmonyPostfix]
         public static void Kill_PostFix(Pawn __instance)
         {
-            if (__instance.Dead && __instance.RaceProps.Humanlike && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteCorpses)
+            if (__instance == null) return;
+            if (__instance.Dead && (__instance.RaceProps.Humanlike || __instance.RaceProps.Animal) && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteCorpses)
             {
                 if (__instance.Faction == Faction.OfPlayer) return;
                 if (__instance.RaceProps.Animal && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteAnimals) return;
                 if (__instance.IsPrisonerOfColony && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().excludePrisoners) return;
                 if (__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteHostile) return;
                 if (!__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteFriendly) return;
-                __instance.Strip();
-                if (!__instance.Corpse.Destroyed) __instance.Corpse.Destroy(DestroyMode.Vanish);
+                if (__instance.Spawned) __instance.Strip();
+                if (__instance.Corpse.Spawned && !__instance.Corpse.Destroyed) __instance.Corpse.Destroy(DestroyMode.Vanish);
             }
         }
 
@@ -87,7 +88,7 @@ namespace LootingManager
                 {
                     ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(product.def);
                     refundedThing.stackCount = Math.Min(product.stackCount, product.def.stackLimit);
-                    GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
+                    if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                 }
             }
             CompReloadable compReloadable = thing.TryGetComp<CompReloadable>();
@@ -103,7 +104,7 @@ namespace LootingManager
                 {
                     ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(compReloadable.AmmoDef);
                     refundedThing.stackCount = Math.Min(chargesCount * compReloadable.Props.ammoCountPerCharge, compReloadable.AmmoDef.stackLimit);
-                    GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
+                    if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                 }
                 else if (compReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundItems)
                 {
@@ -113,7 +114,7 @@ namespace LootingManager
                     {
                         ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(product.def);
                         refundedThing.stackCount = Math.Min(product.stackCount, product.def.stackLimit);
-                        GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
+                        if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                     }
                 }
                 
