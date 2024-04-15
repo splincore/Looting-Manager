@@ -91,25 +91,39 @@ namespace LootingManager
                     if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                 }
             }
-            CompReloadable compReloadable = thing.TryGetComp<CompReloadable>();
-            if (compReloadable != null)
+            if (thing.TryGetComp<CompApparelReloadable>() is CompApparelReloadable compApparelReloadable)
             {
-                int chargesCount = 0;
-                while (compReloadable.RemainingCharges > 0)
+                if (compApparelReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().ejectAmmo)
                 {
-                    compReloadable.UsedOnce();
-                    chargesCount++;
-                }
-                if (compReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().ejectAmmo)
-                {
-                    ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(compReloadable.AmmoDef);
-                    refundedThing.stackCount = Math.Min(chargesCount * compReloadable.Props.ammoCountPerCharge, compReloadable.AmmoDef.stackLimit);
+                    ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(compApparelReloadable.AmmoDef);
+                    refundedThing.stackCount = Math.Min(compApparelReloadable.RemainingCharges * compApparelReloadable.Props.ammoCountPerCharge, compApparelReloadable.AmmoDef.stackLimit);
                     if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
                 }
-                else if (compReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundItems)
+                else if (compApparelReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundItems)
                 {
-                    ThingWithComps thingWithComps = (ThingWithComps)ThingMaker.MakeThing(compReloadable.AmmoDef);
-                    thingWithComps.stackCount = Math.Min(chargesCount * compReloadable.Props.ammoCountPerCharge, compReloadable.AmmoDef.stackLimit);
+                    ThingWithComps thingWithComps = (ThingWithComps)ThingMaker.MakeThing(compApparelReloadable.AmmoDef);
+                    thingWithComps.stackCount = Math.Min(compApparelReloadable.RemainingCharges * compApparelReloadable.Props.ammoCountPerCharge, compApparelReloadable.AmmoDef.stackLimit);
+                    foreach (Thing product in thingWithComps.SmeltProducts(LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundEfficiency))
+                    {
+                        ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(product.def);
+                        refundedThing.stackCount = Math.Min(product.stackCount, product.def.stackLimit);
+                        if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
+                    }
+                }
+                
+            }
+            if (thing.TryGetComp<CompEquippableAbilityReloadable>() is CompEquippableAbilityReloadable compEquippableAbilityReloadable)
+            {
+                if (compEquippableAbilityReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().ejectAmmo)
+                {
+                    ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(compEquippableAbilityReloadable.AmmoDef);
+                    refundedThing.stackCount = Math.Min(compEquippableAbilityReloadable.RemainingCharges * compEquippableAbilityReloadable.Props.ammoCountPerCharge, compEquippableAbilityReloadable.AmmoDef.stackLimit);
+                    if (refundedThing.stackCount > 0) GenSpawn.Spawn(refundedThing, holdingPawn.PositionHeld, holdingPawn.MapHeld);
+                }
+                else if (compEquippableAbilityReloadable.AmmoDef != null && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundItems)
+                {
+                    ThingWithComps thingWithComps = (ThingWithComps)ThingMaker.MakeThing(compEquippableAbilityReloadable.AmmoDef);
+                    thingWithComps.stackCount = Math.Min(compEquippableAbilityReloadable.RemainingCharges * compEquippableAbilityReloadable.Props.ammoCountPerCharge, compEquippableAbilityReloadable.AmmoDef.stackLimit);
                     foreach (Thing product in thingWithComps.SmeltProducts(LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().refundEfficiency))
                     {
                         ThingWithComps refundedThing = (ThingWithComps)ThingMaker.MakeThing(product.def);
