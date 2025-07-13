@@ -27,7 +27,7 @@ namespace LootingManager
                 if (__instance.IsPrisonerOfColony && LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().excludePrisoners) return;
                 if (__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteHostile) return;
                 if (!__instance.Faction.HostileTo(Faction.OfPlayer) && !LoadedModManager.GetMod<LootingManagerMod>().GetSettings<LootingManagerModSettings>().deleteFriendly) return;
-                if (__instance.Spawned) __instance.Strip();
+                if (__instance.MapHeld != null) __instance.Strip();
                 if (__instance.Corpse.Spawned && !__instance.Corpse.Destroyed) __instance.Corpse.Destroy(DestroyMode.Vanish);
             }
         }
